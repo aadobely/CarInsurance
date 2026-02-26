@@ -1,0 +1,102 @@
+@* Home/Index.cshtml - The landing page of the application *@
+@{
+    ViewData["Title"] = "Home";
+}
+
+@* Hero section - big welcome banner *@
+<div class="p-5 mb-4 bg-primary text-white rounded-3 shadow">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">
+            <i class="bi bi-shield-check me-3"></i>Car Insurance Quote Calculator
+        </h1>
+        <p class="col-md-8 fs-4">
+            Get an instant insurance quote in seconds. Fill out a quick form and
+            we'll calculate your personalized monthly rate based on your profile.
+        </p>
+        <div class="d-flex gap-3 mt-4">
+            <a asp-controller="Insuree" asp-action="Create" class="btn btn-light btn-lg fw-semibold">
+                <i class="bi bi-plus-circle me-2"></i>Get a Quote
+            </a>
+            <a asp-controller="Insuree" asp-action="Index" class="btn btn-outline-light btn-lg">
+                <i class="bi bi-list me-2"></i>View All Quotes
+            </a>
+        </div>
+    </div>
+</div>
+
+@* Info cards section *@
+<div class="row g-4 mt-2">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-primary mb-3">
+                    <i class="bi bi-lightning-charge"></i>
+                </div>
+                <h3 class="card-title">Instant Quotes</h3>
+                <p class="card-text text-muted">
+                    Get your personalized insurance quote immediately after
+                    filling out our simple form. No waiting, no phone calls.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-success mb-3">
+                    <i class="bi bi-calculator"></i>
+                </div>
+                <h3 class="card-title">Fair Pricing</h3>
+                <p class="card-text text-muted">
+                    Our quote is based on your age, car, and driving record.
+                    Experienced safe drivers get the best rates!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-warning mb-3">
+                    <i class="bi bi-shield-fill-check"></i>
+                </div>
+                <h3 class="card-title">Full Coverage</h3>
+                <p class="card-text text-muted">
+                    Choose between basic liability coverage or full comprehensive
+                    coverage for total peace of mind on the road.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* How it works section *@
+<div class="mt-5">
+    <h2 class="text-center mb-4">How It Works</h2>
+    <div class="row g-3">
+        <div class="col-md-3 text-center">
+            <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-2"
+                 style="width:50px; height:50px; font-size:1.3rem; font-weight:bold;">1</div>
+            <h5>Fill Out the Form</h5>
+            <p class="text-muted small">Enter your personal info, car details, and driving history</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-2"
+                 style="width:50px; height:50px; font-size:1.3rem; font-weight:bold;">2</div>
+            <h5>We Calculate</h5>
+            <p class="text-muted small">Our system calculates your quote using industry-standard rates</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-2"
+                 style="width:50px; height:50px; font-size:1.3rem; font-weight:bold;">3</div>
+            <h5>Get Your Quote</h5>
+            <p class="text-muted small">See your monthly rate instantly — no hidden fees</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-2"
+                 style="width:50px; height:50px; font-size:1.3rem; font-weight:bold;"><i class="bi bi-check"></i></div>
+            <h5>Done!</h5>
+            <p class="text-muted small">Your quote is saved and you can view or edit it anytime</p>
+        </div>
+    </div>
+</div>

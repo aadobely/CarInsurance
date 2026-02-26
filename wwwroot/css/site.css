@@ -1,0 +1,111 @@
+/* site.css - Custom styles for the CarInsurance app
+   Bootstrap handles most of the heavy lifting, these are just tweaks */
+
+/* ---- General Body Styles ---- */
+html {
+    /* Makes the page take up at least the full screen height
+       so the footer stays at the bottom */
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    /* A very light gray background looks cleaner than pure white */
+    background-color: #f8f9fa;
+    /* Give some space at the bottom for the footer */
+    padding-bottom: 60px;
+}
+
+/* ---- Navbar tweaks ---- */
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+}
+
+/* Active nav link gets a bottom border to show which page youre on */
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+/* ---- Card styles ---- */
+.card {
+    border-radius: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Cards on the home page lift up slightly on hover */
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ---- Table styles ---- */
+.table th {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ---- Form styles ---- */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+/* Make required field labels look slightly diffrent */
+.form-label.fw-semibold::after {
+    content: " *";
+    color: #dc3545;
+    font-size: 0.8em;
+}
+
+/* ---- Button styles ---- */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* ---- Quote display ---- */
+/* Make the big dollar amount on the details page look nice */
+.quote-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #198754;
+}
+
+/* ---- Footer ---- */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ---- Responsive fixes ---- */
+@media (max-width: 768px) {
+    /* On small screens, stack the action buttons vertically */
+    .d-flex.gap-3 {
+        flex-direction: column;
+    }
+
+    /* Make tables scrollable on mobile */
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
+
+/* ---- Hero section on home page ---- */
+.p-5.bg-primary {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca) !important;
+}
+
+/* ---- Smooth transitions for alerts ---- */
+.alert {
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

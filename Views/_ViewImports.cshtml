@@ -1,0 +1,10 @@
+@* _ViewImports.cshtml - This file is automatically included in every view
+   It sets up things we want available everywhere like tag helpers and namespaces *@
+
+@* This makes our Models namespace available in all views without typing the full path *@
+@using CarInsurance
+@using CarInsurance.Models
+
+@* Tag helpers let us use HTML-like syntax for things like form fields and links
+   For example: <label asp-for="FirstName"> instead of Html.LabelFor(...) *@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

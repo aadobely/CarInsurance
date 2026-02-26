@@ -1,0 +1,27 @@
+@* Error.cshtml - Shown when something goes wrong in the app *@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-danger">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>Oops! Something went wrong.
+    </h1>
+    <h2 class="text-muted">Error</h2>
+
+    @* Only show the request ID if we have one - useful for debugging *@
+    @if (Model.ShowRequestId)
+    {
+        <p>
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+
+    <p class="lead">
+        Sorry about that! An error occurred while processing your request.
+    </p>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+        <i class="bi bi-house me-1"></i>Go Back Home
+    </a>
+</div>
