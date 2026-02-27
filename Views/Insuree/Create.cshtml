@@ -11,6 +11,7 @@
 
 <div class="row">
     <div class="col-md-4">
+        <!-- form for creating new insuree -->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -64,6 +65,7 @@
                 </div>
             </div>
 
+
             <div class="form-group">
                 <label asp-for="SpeedingTickets" class="control-label"></label>
                 <input asp-for="SpeedingTickets" class="form-control" />
@@ -79,7 +81,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

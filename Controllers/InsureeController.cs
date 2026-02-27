@@ -52,7 +52,7 @@ namespace CarInsurance.Controllers
         {
             if (ModelState.IsValid)
             {
-                // calculate quote before saving
+                // calulate the quote before we save it to database
                 insuree.Quote = CalculateQuote(insuree);
 
                 _context.Add(insuree);
@@ -152,12 +152,14 @@ namespace CarInsurance.Controllers
         }
 
         // this method calculate the monthly insurance quote
-        private decimal CalculateQuote(Insuree insuree)
-        {
+        private decimal CalculateQuote(Insuree insuree){
+
+
             decimal quote = 50m;
 
-            // figure out the age
+            // we need to figgure out how old the person is
             int age = DateTime.Today.Year - insuree.DateOfBirth.Year;
+            // int age = (DateTime.Now - insuree.DateOfBirth).Days / 365; // tried this first but didnt work
             if (insuree.DateOfBirth.Date > DateTime.Today.AddYears(-age))
             {
                 age--;
@@ -182,12 +184,13 @@ namespace CarInsurance.Controllers
             {
                 quote += 25m;
             }
+
             if (insuree.CarYear > 2015)
             {
                 quote += 25m;
             }
 
-            // porsche cost more
+            // porshe cars are more expensive than regular cars
             if (insuree.CarMake.ToLower() == "porsche")
             {
                 quote += 25m;
@@ -199,16 +202,16 @@ namespace CarInsurance.Controllers
                 }
             }
 
-            // each speeding ticket add $10
+            // for every speeding ticket add ten dollars
             quote += insuree.SpeedingTickets * 10m;
 
-            // dui add 25%
+            // if they have dui we add extra 25 percent
             if (insuree.DUI)
             {
                 quote = quote * 1.25m;
             }
 
-            // full coverage add 50%
+            // full coverage means we add 50% more to the total
             if (insuree.CoverageType)
             {
                 quote = quote * 1.50m;
@@ -217,8 +220,7 @@ namespace CarInsurance.Controllers
             return quote;
         }
 
-        private bool InsureeExists(int id)
-        {
+        private bool InsureeExists(int id){
             return _context.Insurees.Any(e => e.Id == id);
         }
     }

@@ -1,3 +1,4 @@
+// this is the insuree model class
 using System.ComponentModel.DataAnnotations;
 
 namespace CarInsurance.Models
@@ -5,6 +6,7 @@ namespace CarInsurance.Models
     public class Insuree
     {
         public int Id { get; set; }
+
 
         [Required]
         [Display(Name = "First Name")]
@@ -29,7 +31,7 @@ namespace CarInsurance.Models
 
         [Required]
         [Display(Name = "Car Year")]
-        [Range(1900, 2025)]
+        [Range(1886, 2025)]
         public int CarYear { get; set; }
 
         [Required]
@@ -49,6 +51,7 @@ namespace CarInsurance.Models
         [Display(Name = "Speeding Tickets")]
         [Range(0, 100)]
         public int SpeedingTickets { get; set; }
+
 
         [Display(Name = "Full Coverage")]
         public bool CoverageType { get; set; }
